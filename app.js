@@ -15,7 +15,7 @@ app.use(cors())
 
 
 //Connect to mongo
-const dbURI = 'mongodb+srv://paintinguser:kXdjRHY55JZi8Pcg@cluster0.njxkzua.mongodb.net/painting-db?retryWrites=true&w=majority'
+const dbURI = process.env.MONGO_CONNECTION
 
 mongoose.connect(dbURI, { useNewUrlParser: true })
     .then(() => {
@@ -89,7 +89,6 @@ app.post('/checkout', async (req, res) => {
         
         res.json({ url: session.url })
     } catch (error) {
-        console.log(error)
         res.status(500).json({ message: error.message })
     }
 })
