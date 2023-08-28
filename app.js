@@ -1,18 +1,16 @@
 const express = require('express')
 const app = express();
 const mongoose = require('mongoose')
-const Painting = require('./models/Painting')
 const cors = require('cors')
 require('dotenv').config();
 //Stripe payment
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
-
 // Middleware to parse incoming JSON data
 app.use(express.json());
 // To make requests beween backend and frontend
 app.use(cors())
-
-
+//Importing the model
+const Painting = require('./models/Painting')
 
 //Connect to mongo
 const dbURI = process.env.MONGO_CONNECTION
