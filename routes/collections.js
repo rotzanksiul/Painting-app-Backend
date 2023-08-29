@@ -5,7 +5,6 @@ const Painting = require('../models/Painting')
 //Stripe payment
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
-
 const getPaintings = async (req, res) => {
     try {
         const painting = await Painting.find()
@@ -95,5 +94,4 @@ router.post('/checkout', async (req, res) => {
 //     }
 
 // })
-
 module.exports = router
