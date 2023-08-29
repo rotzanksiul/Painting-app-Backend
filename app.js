@@ -4,6 +4,8 @@ const express = require('express')
 const app = express();
 const mongoose = require('mongoose')
 const cors = require('cors')
+const collectionsRoutes= require('./routes/collections')
+app.use('/', collectionsRoutes)
 // Middleware to parse incoming JSON data
 app.use(express.json());
 // To make requests beween backend and frontend
@@ -20,9 +22,6 @@ mongoose.connect(dbURI, { useNewUrlParser: true })
         console.log('unable to connect to database' + err)
     })
 
- const collectionsRoutes= require('./routes/collections')
- 
- app.use('/', collectionsRoutes)
 
 //Port to listen
 
