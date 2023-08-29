@@ -96,4 +96,4 @@ router.post('/checkout', async (req, res) => {
 
 // })
 
-modules.exports = router
+module.exports = router
