@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router();
 //Importing the model
-const Painting = require('..Painting/models/Painting')
+const Painting = require('../models/Painting')
 //Stripe payment
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
