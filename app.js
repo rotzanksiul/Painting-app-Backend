@@ -15,10 +15,10 @@ const dbURI = process.env.MONGO_CONNECTION
 
 mongoose.connect(dbURI, { useNewUrlParser: true })
     .then(() => {
-        console.log('connected to data base')
+        console.info('connected to data base')
     })
     .catch((err) => {
-        console.log('unable to connect to database' + err)
+        console.error('unable to connect to database' + err)
     })
 
 app.use('/', collectionsRoutes)
@@ -27,5 +27,5 @@ app.use('/', collectionsRoutes)
 const PORT = 3001
 
 app.listen(process.env.PORT || PORT, () => {
-    console.log(`listening to port ${PORT}`)
+    console.info(`listening to port ${PORT}`)
 })
